@@ -1,4 +1,13 @@
-const myArray = [1,2,3,4,5];
+const myPromise = new Promise( (resolve, reject) => {
 
-const b = myArray.map(el => el+1);
-console.log(b);
+    if(true) {
+        setTimeout(() => {
+            resolve('I have succeeded');
+        }, 1000);
+    } else {
+        reject('Yo rejected');
+    }
+   
+});
+
+myPromise.then( value => console.log(value)).catch(rejectValue => console.log(rejectValue) );
